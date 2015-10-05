@@ -10,8 +10,8 @@ function join { perl -e '$s = shift @ARGV; print join($s, @ARGV);' "$@"; }
 
 webp=($(ls $1/*.png.webp))
 
-command=`join " +100 -frame " "${webp[@]}"`
-full_command="libwebp/bin/webpmux -frame $command +100 -loop 10 -bgcolor 255,255,255,255 -o $1.webp"
+command=`join " +100+0+0+1-b -frame " "${webp[@]}"`
+full_command="libwebp/bin/webpmux -frame $command +100+0+0+1-b -loop 10 -bgcolor 255,255,255,255 -o $1.webp"
 echo $full_command
 $full_command
 #libwebp/bin/webpmux -frame 00000.png.webp +100 -frame 00001.png.webp +100 -frame 00003.png.webp +100 -loop 10 -bgcolor 255,255,255,255 -o animated_container.webp

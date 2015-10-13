@@ -1,4 +1,3 @@
 *.png
 *.webp
 .DS_Store
-libwebp/*
